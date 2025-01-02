@@ -52,8 +52,8 @@ export interface IParallax {
   current: number
   controller: Controller<{ scroll: number }>
   layers: Set<IParallaxLayer>
-  container: React.MutableRefObject<any>
-  content: React.MutableRefObject<any>
+  container: React.RefObject<any>
+  content: React.RefObject<any>
   scrollTo(offset: number): void
   update(): void
   stop(): void
@@ -143,7 +143,7 @@ export const ParallaxLayer = React.memo(
 
       React.useImperativeHandle(ref, () => layer)
 
-      const layerRef = useRef<any>()
+      const layerRef = useRef<any>(null)
 
       const setSticky = (height: number, scrollTop: number) => {
         const start = layer.sticky!.start! * height
@@ -229,8 +229,8 @@ export const Parallax = React.memo(
       ...rest
     } = props
 
-    const containerRef = useRef<any>()
-    const contentRef = useRef<any>()
+    const containerRef = useRef<any>(null)
+    const contentRef = useRef<any>(null)
 
     const state: IParallax = useMemoOne(
       () => ({

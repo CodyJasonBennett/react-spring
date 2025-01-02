@@ -7,9 +7,10 @@ import {
 } from '@react-spring/types'
 import { FluidValue } from '@react-spring/shared'
 import { Primitives } from './primitives'
+import { ThreeElements } from '@react-three/fiber'
 
 type AnimatedPrimitives = {
-  [P in Primitives]: AnimatedComponent<FC<JSX.IntrinsicElements[P]>>
+  [P in Primitives]: AnimatedComponent<FC<ThreeElements[P]>>
 }
 
 /** The type of the `animated()` function */

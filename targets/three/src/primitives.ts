@@ -1,7 +1,7 @@
 import * as THREE from 'three'
-import '@react-three/fiber'
+import { ThreeElements } from '@react-three/fiber'
 
-export type Primitives = keyof JSX.IntrinsicElements
+export type Primitives = keyof ThreeElements
 
 export const primitives = ['primitive'].concat(
   Object.keys(THREE)

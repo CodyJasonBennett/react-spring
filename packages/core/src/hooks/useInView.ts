@@ -8,7 +8,7 @@ import { Valid } from '../types/common'
 
 export interface IntersectionArgs
   extends Omit<IntersectionObserverInit, 'root' | 'threshold'> {
-  root?: React.MutableRefObject<HTMLElement>
+  root?: React.RefObject<HTMLElement>
   once?: boolean
   amount?: 'any' | 'all' | number | number[]
 }
@@ -35,7 +35,7 @@ export function useInView<TElement extends HTMLElement>(
   args?: IntersectionArgs
 ) {
   const [isInView, setIsInView] = useState(false)
-  const ref = useRef<TElement>()
+  const ref = useRef<TElement>(null)
 
   const propsFn = is.fun(props) && props
 
