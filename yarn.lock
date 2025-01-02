@@ -4971,6 +4971,7 @@ __metadata:
     react: 18.3.1
     react-dom: 18.3.1
     react-select: 5.8.1
+    react-use-measure: ^2.1.1
     refractor: 4.8.1
     rehype-autolink-headings: 7.1.0
     rehype-parse: 9.0.1
@@ -17721,7 +17722,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-use-measure@npm:2.1.1":
+"react-use-measure@npm:2.1.1, react-use-measure@npm:^2.1.1":
   version: 2.1.1
   resolution: "react-use-measure@npm:2.1.1"
   dependencies:
