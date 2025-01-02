@@ -18,7 +18,7 @@ export const SpringContext = makeRenderableContext<
   PropsWithChildren<SpringContext>
 >(
   Context =>
-    ({ children, ...props }: PropsWithChildren<SpringContext>) => {
+    ({ children, ...props }) => {
       const inherited = useContext(Context)
 
       // Inherited values are dominant when truthy.
