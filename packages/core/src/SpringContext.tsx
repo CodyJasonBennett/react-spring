@@ -13,33 +13,38 @@ export interface SpringContext {
   immediate?: boolean
 }
 
-export const SpringContext = ({
-  children,
-  ...props
-}: PropsWithChildren<SpringContext>) => {
-  const inherited = useContext(ctx)
+export const SpringContext = makeRenderableContext<
+  SpringContext,
+  PropsWithChildren<SpringContext>
+>(
+  Context =>
+    ({ children, ...props }: PropsWithChildren<SpringContext>) => {
+      const inherited = useContext(Context)
 
-  // Inherited values are dominant when truthy.
-  const pause = props.pause || !!inherited.pause,
-    immediate = props.immediate || !!inherited.immediate
+      // Inherited values are dominant when truthy.
+      const pause = props.pause || !!inherited.pause
+      const immediate = props.immediate || !!inherited.immediate
 
-  // Memoize the context to avoid unwanted renders.
-  props = useMemoOne(() => ({ pause, immediate }), [pause, immediate])
+      // Memoize the context to avoid unwanted renders.
+      props = useMemoOne(() => ({ pause, immediate }), [pause, immediate])
 
-  const { Provider } = ctx
-  return <Provider value={props}>{children}</Provider>
-}
-
-const ctx = makeContext(SpringContext, {} as SpringContext)
-
-// Allow `useContext(SpringContext)` in TypeScript.
-SpringContext.Provider = ctx.Provider
-SpringContext.Consumer = ctx.Consumer
+      return <Context value={props}>{children}</Context>
+    },
+  {} as SpringContext
+)
 
 /** Make the `target` compatible with `useContext` */
-function makeContext<T>(target: any, init: T): React.Context<T> {
-  Object.assign(target, React.createContext(init))
-  target.Provider._context = target
-  target.Consumer._context = target
-  return target
+function makeRenderableContext<T, P>(
+  target: (context: React.Context<T>) => React.FunctionComponent<P>,
+  init: T
+): React.Context<T> {
+  let context = React.createContext(init)
+  context = Object.assign(context, target(context))
+
+  // https://github.com/facebook/react/pull/28226
+  context.Provider = context
+  // @ts-expect-error
+  context.Consumer._context = context
+
+  return context
 }
