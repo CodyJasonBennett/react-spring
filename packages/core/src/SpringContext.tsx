@@ -33,18 +33,28 @@ export const SpringContext = makeRenderableContext<
   {} as SpringContext
 )
 
+interface RenderableContext<T, P> extends React.ProviderExoticComponent<P> {
+  Provider: RenderableContext<T, P>
+  Consumer: React.Consumer<T>
+  displayName?: string
+}
+
 /** Make the `target` compatible with `useContext` */
 function makeRenderableContext<T, P>(
   target: (context: React.Context<T>) => React.FunctionComponent<P>,
   init: T
-): React.Context<T> {
+): RenderableContext<T, P> {
   let context = React.createContext(init)
   context = Object.assign(context, target(context))
 
   // https://github.com/facebook/react/pull/28226
-  context.Provider = context
+  if ('_context' in context.Provider) {
+    context.Provider._context = target
+  } else {
+    context.Provider = context
+  }
   // @ts-expect-error
   context.Consumer._context = context
 
-  return context
+  return context as unknown as RenderableContext<T, P>
 }
