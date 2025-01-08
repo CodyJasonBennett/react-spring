@@ -45,7 +45,7 @@ function makeRenderableContext<T, P>(
   init: T
 ): RenderableContext<T, P> {
   let context = React.createContext(init)
-  context = Object.assign(context, target(context))
+  context = Object.assign(target(context), context)
 
   // https://github.com/facebook/react/pull/28226
   if ('_context' in context.Provider) {
