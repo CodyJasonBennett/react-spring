@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { CSSProperties, ForwardRefExoticComponent, FC } from 'react'
+import { CSSProperties, ForwardRefExoticComponent, FC, JSX } from 'react'
 import {
   AssignableKeys,
   ComponentPropsWithRef,
@@ -7,10 +7,9 @@ import {
 } from '@react-spring/types'
 import { FluidValue } from '@react-spring/shared'
 import { Primitives } from './primitives'
-import { ThreeElements } from '@react-three/fiber'
 
 type AnimatedPrimitives = {
-  [P in Primitives]: AnimatedComponent<FC<ThreeElements[P]>>
+  [P in Primitives]: AnimatedComponent<FC<JSX.IntrinsicElements[P]>>
 }
 
 /** The type of the `animated()` function */
