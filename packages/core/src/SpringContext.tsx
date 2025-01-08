@@ -49,7 +49,7 @@ function makeRenderableContext<T, P>(
 
   // https://github.com/facebook/react/pull/28226
   if ('_context' in context.Provider) {
-    context.Provider._context = target
+    context.Provider._context = context
   } else {
     context.Provider = context
   }
