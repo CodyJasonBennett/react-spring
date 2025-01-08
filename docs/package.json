@@ -32,6 +32,7 @@
     "@remix-run/serve": "2.15.2",
     "@remix-run/server-runtime": "2.15.2",
     "@supabase/supabase-js": "2.47.10",
+    "@use-gesture/react": "^10.3.1",
     "@vanilla-extract/css": "1.17.0",
     "@vanilla-extract/dynamic": "2.1.2",
     "@vanilla-extract/recipes": "0.5.5",
