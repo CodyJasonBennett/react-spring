@@ -28,7 +28,7 @@ export const SpringContext = makeRenderableContext<
       // Memoize the context to avoid unwanted renders.
       props = useMemoOne(() => ({ pause, immediate }), [pause, immediate])
 
-      return <Context value={props}>{children}</Context>
+      return <Context.Provider value={props}>{children}</Context.Provider>
     },
   {} as SpringContext
 )
@@ -51,6 +51,7 @@ function makeRenderableContext<T, P>(
   if ('_context' in context.Provider) {
     context.Provider._context = context
   } else {
+    // @ts-expect-error
     context.Provider = context
   }
 
