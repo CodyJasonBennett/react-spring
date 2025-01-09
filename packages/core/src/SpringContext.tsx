@@ -53,8 +53,13 @@ function makeRenderableContext<T, P>(
   } else {
     context.Provider = context
   }
-  // @ts-expect-error
-  context.Consumer._context = context
+
+  if ('_context' in context.Consumer) {
+    context.Consumer._context = context
+  } else {
+    // @ts-expect-error
+    context.Consumer = context
+  }
 
   return context as unknown as RenderableContext<T, P>
 }
