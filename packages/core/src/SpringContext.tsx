@@ -51,7 +51,7 @@ function makeRenderableContext<T, P>(
   if ('_context' in context.Provider) {
     context.Provider._context = context
   } else {
-    // @ts-expect-error
+    // @ts-ignore React 18 types disallow this
     context.Provider = context
   }
 

@@ -19,7 +19,7 @@ addEffect(() => {
 })
 
 const host = createHost(primitives, {
-  // @ts-expect-error r3f related
+  // @ts-ignore related to R3F v8
   applyAnimatedValues: applyProps,
 })
 
