@@ -52,8 +52,8 @@ export interface IParallax {
   current: number
   controller: Controller<{ scroll: number }>
   layers: Set<IParallaxLayer>
-  container: React.MutableRefObject<any>
-  content: React.MutableRefObject<any>
+  container: React.RefObject<any>
+  content: React.RefObject<any>
   scrollTo(offset: number): void
   update(): void
   stop(): void
