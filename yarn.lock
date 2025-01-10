@@ -4682,6 +4682,7 @@ __metadata:
     "@remix-run/serve": 2.15.2
     "@remix-run/server-runtime": 2.15.2
     "@supabase/supabase-js": 2.47.10
+    "@use-gesture/react": ^10.3.1
     "@vanilla-extract/css": 1.17.0
     "@vanilla-extract/dynamic": 2.1.2
     "@vanilla-extract/recipes": 0.5.5
@@ -4702,6 +4703,7 @@ __metadata:
     react: 18.3.1
     react-dom: 18.3.1
     react-select: 5.9.0
+    react-use-measure: ^2.1.1
     refractor: 4.8.1
     rehype-autolink-headings: 7.1.0
     rehype-parse: 9.0.1
@@ -4905,6 +4907,48 @@ __metadata:
     react-native:
       optional: true
   checksum: 353c921f95c904883412cacefd8043cd864cb34e748b3195419064bb6577b14ec6d5f5e1f087b52a198a555b3f29e9a9196e32e8b25f8e6f14ec1e80211d81ae
+  languageName: node
+  linkType: hard
+
+"@react-three/fiber@npm:9.0.0-rc.1":
+  version: 9.0.0-rc.1
+  resolution: "@react-three/fiber@npm:9.0.0-rc.1"
+  dependencies:
+    "@babel/runtime": ^7.17.8
+    "@types/debounce": ^1.2.1
+    "@types/react-reconciler": ^0.28.8
+    "@types/webxr": "*"
+    base64-js: ^1.5.1
+    buffer: ^6.0.3
+    debounce: ^1.2.1
+    its-fine: ^1.2.5
+    react-reconciler: 0.31.0-rc.1
+    scheduler: 0.25.0-rc.1
+    suspend-react: ^0.1.3
+    zustand: ^4.1.2
+  peerDependencies:
+    expo: ">=43.0"
+    expo-asset: ">=8.4"
+    expo-file-system: ">=11.0"
+    expo-gl: ">=11.0"
+    react: ">=19.0"
+    react-dom: ">=19.0"
+    react-native: ">=0.69"
+    three: ">=0.141"
+  peerDependenciesMeta:
+    expo:
+      optional: true
+    expo-asset:
+      optional: true
+    expo-file-system:
+      optional: true
+    expo-gl:
+      optional: true
+    react-dom:
+      optional: true
+    react-native:
+      optional: true
+  checksum: faf3a5c328a6e016aeedfbc1b4cefe0b61c3202a384f5995546094c67047e30d7484a6dd997900f7cf5b7d5cf50d714efd904ba29e127878ef77f8b44a6c5ab9
   languageName: node
   linkType: hard
 
@@ -6047,12 +6091,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:18.3.5":
-  version: 18.3.5
-  resolution: "@types/react-dom@npm:18.3.5"
+"@types/react-dom@npm:19.0.2":
+  version: 19.0.2
+  resolution: "@types/react-dom@npm:19.0.2"
   peerDependencies:
-    "@types/react": ^18.0.0
-  checksum: 95c757684f71e761515c5a11299e5feec550c72bb52975487f360e6f0d359b26454c26eaf2ce45dd22748205aa9b2c2fe0abe7005ebcbd233a7615283ac39a7d
+    "@types/react": ^19.0.0
+  checksum: d2ae81ec0b8eee7a4bf31918796fdaa34e8db68f69682163bc212d759de76783e6ffcc02c02722dcf508429067148841e6da81414cc730ca2a28c9c2b350c880
   languageName: node
   linkType: hard
 
@@ -6092,6 +6136,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/react-reconciler@npm:^0.28.8":
+  version: 0.28.9
+  resolution: "@types/react-reconciler@npm:0.28.9"
+  peerDependencies:
+    "@types/react": "*"
+  checksum: 06257f693c7b148a4258c0d0a958288116100014e7b3c21ceaea2d55a668c71718f79b4105a9a0f35b480f3729e46960b40026d685719f9386b4ed63108dda09
+  languageName: node
+  linkType: hard
+
 "@types/react-transition-group@npm:^4.4.0":
   version: 4.4.10
   resolution: "@types/react-transition-group@npm:4.4.10"
@@ -6101,13 +6154,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:18.3.18":
+"@types/react@npm:*":
   version: 18.3.18
   resolution: "@types/react@npm:18.3.18"
   dependencies:
     "@types/prop-types": "*"
     csstype: ^3.0.2
   checksum: 5933597bc9f53e282f0438f0bb76d0f0fab60faabe760ea806e05ffe6f5c61b9b4d363e1a03a8fea47c510d493c6cf926cdeeba9f7074fa97b61940c350245e7
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:19.0.2":
+  version: 19.0.2
+  resolution: "@types/react@npm:19.0.2"
+  dependencies:
+    csstype: ^3.0.2
+  checksum: 2f12c2a84b778283884d41560c723d815153d88c56cacf25c0166329e9099c35c82c602a21d8831a381e2ef5574434ebd7bf09a636fe073558919474b0b3c9ed
   languageName: node
   linkType: hard
 
@@ -12508,7 +12570,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"its-fine@npm:^1.0.6, its-fine@npm:^1.1.1":
+"its-fine@npm:^1.0.6, its-fine@npm:^1.1.1, its-fine@npm:^1.2.5":
   version: 1.2.5
   resolution: "its-fine@npm:1.2.5"
   dependencies:
@@ -16886,6 +16948,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-dom@npm:19.0.0":
+  version: 19.0.0
+  resolution: "react-dom@npm:19.0.0"
+  dependencies:
+    scheduler: ^0.25.0
+  peerDependencies:
+    react: ^19.0.0
+  checksum: 009cc6e575263a0d1906f9dd4aa6532d2d3d0d71e4c2b7777c8fe4de585fa06b5b77cdc2e0fbaa2f3a4a5e5d3305c189ba152153f358ee7da4d9d9ba5d3a8975
+  languageName: node
+  linkType: hard
+
 "react-dropzone@npm:^12.0.0":
   version: 12.1.0
   resolution: "react-dropzone@npm:12.1.0"
@@ -16998,6 +17071,17 @@ __metadata:
   bin:
     react-native: cli.js
   checksum: ff7e96f2f8ea28003a5f5c3a3024cad0b58cf7862b72689734e20482049276d778964b127b0f16c114cedf5b109396559de366df40b45b27ea2499ed11cf9322
+  languageName: node
+  linkType: hard
+
+"react-reconciler@npm:0.31.0-rc.1":
+  version: 0.31.0-rc.1
+  resolution: "react-reconciler@npm:0.31.0-rc.1"
+  dependencies:
+    scheduler: 0.25.0-rc.1
+  peerDependencies:
+    react: 19.0.0-rc.1
+  checksum: cb769884a9cfc8707d49849533d6fccd9854bed786c5f58d6525da6772428b8853a881947dca27eaa41d3861283f58142ae39a0bb991a0ffd00f83a1df533990
   languageName: node
   linkType: hard
 
@@ -17125,7 +17209,7 @@ __metadata:
     "@changesets/cli": 2.27.11
     "@commitlint/cli": 19.6.1
     "@commitlint/config-conventional": 19.6.0
-    "@react-three/fiber": 8.17.10
+    "@react-three/fiber": 9.0.0-rc.1
     "@remix-run/dev": 2.15.2
     "@simonsmith/cypress-image-snapshot": 9.1.0
     "@swc/core": 1.10.4
@@ -17138,8 +17222,8 @@ __metadata:
     "@types/jest": 29.5.14
     "@types/lodash.clamp": 4.0.9
     "@types/lodash.shuffle": 4.2.9
-    "@types/react": 18.3.18
-    "@types/react-dom": 18.3.5
+    "@types/react": 19.0.2
+    "@types/react-dom": 19.0.2
     "@types/react-lazyload": 3.2.3
     "@types/react-native": 0.73.0
     "@types/styled-components": 5.1.34
@@ -17154,8 +17238,8 @@ __metadata:
     mock-raf: "npm:@react-spring/mock-raf@1.1.1"
     prettier: 3.4.2
     pretty-quick: 4.0.0
-    react: 18.3.1
-    react-dom: 18.3.1
+    react: 19.0.0
+    react-dom: 19.0.0
     react-konva: 18.2.10
     react-native: 0.76.5
     react-zdog: 1.2.2
@@ -17226,7 +17310,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-use-measure@npm:2.1.1":
+"react-use-measure@npm:2.1.1, react-use-measure@npm:^2.1.1":
   version: 2.1.1
   resolution: "react-use-measure@npm:2.1.1"
   dependencies:
@@ -17266,6 +17350,13 @@ __metadata:
   dependencies:
     loose-envify: ^1.1.0
   checksum: a27bcfa8ff7c15a1e50244ad0d0c1cb2ad4375eeffefd266a64889beea6f6b64c4966c9b37d14ee32d6c9fcd5aa6ba183b6988167ab4d127d13e7cb5b386a376
+  languageName: node
+  linkType: hard
+
+"react@npm:19.0.0":
+  version: 19.0.0
+  resolution: "react@npm:19.0.0"
+  checksum: 86de15d85b2465feb40297a90319c325cb07cf27191a361d47bcfe8c6126c973d660125aa67b8f4cbbe39f15a2f32efd0c814e98196d8e5b68c567ba40a399c6
   languageName: node
   linkType: hard
 
@@ -18035,6 +18126,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"scheduler@npm:0.25.0-rc.1":
+  version: 0.25.0-rc.1
+  resolution: "scheduler@npm:0.25.0-rc.1"
+  checksum: 03b56e352ab835ee4d2e55525380f622807e6d2407291474e21bdb70e8135da0e0d7bec3e86c7b0d68d83ffa6645799e947ce34e1bc91c982f4d6e5285cfedcd
+  languageName: node
+  linkType: hard
+
 "scheduler@npm:^0.21.0":
   version: 0.21.0
   resolution: "scheduler@npm:0.21.0"
@@ -18050,6 +18148,13 @@ __metadata:
   dependencies:
     loose-envify: ^1.1.0
   checksum: 3e82d1f419e240ef6219d794ff29c7ee415fbdc19e038f680a10c067108e06284f1847450a210b29bbaf97b9d8a97ced5f624c31c681248ac84c80d56ad5a2c4
+  languageName: node
+  linkType: hard
+
+"scheduler@npm:^0.25.0":
+  version: 0.25.0
+  resolution: "scheduler@npm:0.25.0"
+  checksum: b7bb9fddbf743e521e9aaa5198a03ae823f5e104ebee0cb9ec625392bb7da0baa1c28ab29cee4b1e407a94e76acc6eee91eeb749614f91f853efda2613531566
   languageName: node
   linkType: hard
 
@@ -20138,6 +20243,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"use-sync-external-store@npm:^1.2.2":
+  version: 1.4.0
+  resolution: "use-sync-external-store@npm:1.4.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+  checksum: dc3843a1b59ac8bd01417bd79498d4c688d5df8bf4801be50008ef4bfaacb349058c0b1605b5b43c828e0a2d62722d7e861573b3f31cea77a7f23e8b0fc2f7e3
+  languageName: node
+  linkType: hard
+
 "util-deprecate@npm:^1.0.1, util-deprecate@npm:^1.0.2, util-deprecate@npm:~1.0.1":
   version: 1.0.2
   resolution: "util-deprecate@npm:1.0.2"
@@ -21031,6 +21145,26 @@ __metadata:
     react:
       optional: true
   checksum: 18f025b1b666a311121d3855303ff58e6a21fd107920ca474307e86984c13338d6c4cfa5cdf13382a9e0f76821f2554a12d4d200a98a66b58637e729f149797b
+  languageName: node
+  linkType: hard
+
+"zustand@npm:^4.1.2":
+  version: 4.5.6
+  resolution: "zustand@npm:4.5.6"
+  dependencies:
+    use-sync-external-store: ^1.2.2
+  peerDependencies:
+    "@types/react": ">=16.8"
+    immer: ">=9.0.6"
+    react: ">=16.8"
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+    immer:
+      optional: true
+    react:
+      optional: true
+  checksum: c4e9c809c92195fa2f9e8e0cd6631b6830fc9676343c8584c20cf26d402f220c54ae0479a299dbcd5e1cdfc5977f116838f1b5f39d6a4997ff727c6cebe60d3f
   languageName: node
   linkType: hard
 
