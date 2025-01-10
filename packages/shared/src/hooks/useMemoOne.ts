@@ -33,6 +33,7 @@ export function useMemoOne<T>(getResult: () => T, inputs?: any[]): T {
   }
 
   useEffect(() => {
+    // @ts-expect-error useRef immutable in 18.3 types
     committed.current = cache
     if (prevCache == initial) {
       initial.inputs = initial.result = undefined

@@ -68,6 +68,7 @@ export const withAnimated = (Component: any, host: HostConfig) => {
 
     const observerRef = useRef<PropsObserver>(null)
     useIsomorphicLayoutEffect(() => {
+      // @ts-expect-error useRef immutable in 18.3 types
       observerRef.current = observer
 
       // Observe the latest dependencies.
