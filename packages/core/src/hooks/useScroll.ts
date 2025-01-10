@@ -1,4 +1,4 @@
-import { RefObject } from 'react'
+import { MutableRefObject } from 'react'
 import { each, onScroll, useIsomorphicLayoutEffect } from '@react-spring/shared'
 
 import { SpringProps, SpringValues } from '../types'
@@ -6,7 +6,7 @@ import { SpringProps, SpringValues } from '../types'
 import { useSpring } from './useSpring'
 
 export interface UseScrollOptions extends Omit<SpringProps, 'to' | 'from'> {
-  container?: RefObject<HTMLElement>
+  container?: MutableRefObject<HTMLElement>
 }
 
 /**
@@ -30,7 +30,7 @@ export interface UseScrollOptions extends Omit<SpringProps, 'to' | 'from'> {
   ```
  * 
  * @param {UseScrollOptions} useScrollOptions options for the useScroll hook.
- * @param {RefObject<HTMLElement>} useScrollOptions.container the container to listen to scroll events on, defaults to the window.
+ * @param {MutableRefObject<HTMLElement>} useScrollOptions.container the container to listen to scroll events on, defaults to the window.
  *
  * @returns {SpringValues<{scrollX: number; scrollY: number; scrollXProgress: number; scrollYProgress: number}>} SpringValues the collection of values returned from the inner hook
  */
