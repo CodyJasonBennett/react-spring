@@ -23,7 +23,7 @@
  */
 
 import * as React from 'react'
-import { ReactElement, RefObject } from 'react'
+import { ReactElement, MutableRefObject } from 'react'
 
 /** Ensure each type of `T` is an array */
 export type Arrify<T> = [T, T] extends [infer T, infer DT]
@@ -139,7 +139,7 @@ export interface Disposable {
 }
 
 // react.d.ts
-export type RefProp<T> = RefObject<T | null | undefined>
+export type RefProp<T> = MutableRefObject<T | null | undefined>
 
 // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/34237
 export type ElementType<P = any> =

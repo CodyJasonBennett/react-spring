@@ -8,7 +8,7 @@ import { Valid } from '../types/common'
 
 export interface IntersectionArgs
   extends Omit<IntersectionObserverInit, 'root' | 'threshold'> {
-  root?: React.RefObject<HTMLElement>
+  root?: React.MutableRefObject<HTMLElement>
   once?: boolean
   amount?: 'any' | 'all' | number | number[]
 }
