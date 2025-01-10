@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, MutableRefObject } from 'react'
 
 type Cache<T> = {
   inputs?: any[]
@@ -14,7 +14,8 @@ export function useMemoOne<T>(getResult: () => T, inputs?: any[]): T {
     })
   )
 
-  const committed = useRef<Cache<T>>(null)
+  // NOTE: useRef is bugged as immutable in 18.3 types
+  const committed = useRef<Cache<T>>(null) as MutableRefObject<Cache<T> | null>
   const prevCache = committed.current
 
   let cache = prevCache
@@ -33,7 +34,6 @@ export function useMemoOne<T>(getResult: () => T, inputs?: any[]): T {
   }
 
   useEffect(() => {
-    // @ts-expect-error useRef immutable in 18.3 types
     committed.current = cache
     if (prevCache == initial) {
       initial.inputs = initial.result = undefined

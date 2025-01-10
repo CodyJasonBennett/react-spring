@@ -1,5 +1,12 @@
 import * as React from 'react'
-import { forwardRef, useRef, Ref, useCallback, useEffect } from 'react'
+import {
+  forwardRef,
+  useRef,
+  Ref,
+  useCallback,
+  useEffect,
+  MutableRefObject,
+} from 'react'
 import {
   is,
   each,
@@ -66,9 +73,11 @@ export const withAnimated = (Component: any, host: HostConfig) => {
 
     const observer = new PropsObserver(callback, deps)
 
-    const observerRef = useRef<PropsObserver>(null)
+    // NOTE: useRef is bugged as immutable in 18.3 types
+    const observerRef = useRef<PropsObserver>(
+      null
+    ) as MutableRefObject<PropsObserver | null>
     useIsomorphicLayoutEffect(() => {
-      // @ts-expect-error useRef immutable in 18.3 types
       observerRef.current = observer
 
       // Observe the latest dependencies.
