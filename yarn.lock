@@ -4910,9 +4910,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-three/fiber@npm:9.0.0-rc.1":
-  version: 9.0.0-rc.1
-  resolution: "@react-three/fiber@npm:9.0.0-rc.1"
+"@react-three/fiber@npm:9.0.0-rc.2":
+  version: 9.0.0-rc.2
+  resolution: "@react-three/fiber@npm:9.0.0-rc.2"
   dependencies:
     "@babel/runtime": ^7.17.8
     "@types/debounce": ^1.2.1
@@ -4922,8 +4922,8 @@ __metadata:
     buffer: ^6.0.3
     debounce: ^1.2.1
     its-fine: ^1.2.5
-    react-reconciler: 0.31.0-rc.1
-    scheduler: 0.25.0-rc.1
+    react-reconciler: 0.31.0
+    scheduler: 0.25.0
     suspend-react: ^0.1.3
     zustand: ^4.1.2
   peerDependencies:
@@ -4931,10 +4931,10 @@ __metadata:
     expo-asset: ">=8.4"
     expo-file-system: ">=11.0"
     expo-gl: ">=11.0"
-    react: ">=19.0"
-    react-dom: ">=19.0"
+    react: ^19.0.0
+    react-dom: ^19.0.0
     react-native: ">=0.69"
-    three: ">=0.141"
+    three: ">=0.156"
   peerDependenciesMeta:
     expo:
       optional: true
@@ -4948,7 +4948,7 @@ __metadata:
       optional: true
     react-native:
       optional: true
-  checksum: faf3a5c328a6e016aeedfbc1b4cefe0b61c3202a384f5995546094c67047e30d7484a6dd997900f7cf5b7d5cf50d714efd904ba29e127878ef77f8b44a6c5ab9
+  checksum: efb7af039705b10fa456c3e90338e0d5fdaba50238901c84e3b7ddc59cc9b07f178900077625a628a53b9cc2013eca804bd5268b5f28883718b13e13ad85d4af
   languageName: node
   linkType: hard
 
@@ -17074,14 +17074,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-reconciler@npm:0.31.0-rc.1":
-  version: 0.31.0-rc.1
-  resolution: "react-reconciler@npm:0.31.0-rc.1"
+"react-reconciler@npm:0.31.0":
+  version: 0.31.0
+  resolution: "react-reconciler@npm:0.31.0"
   dependencies:
-    scheduler: 0.25.0-rc.1
+    scheduler: ^0.25.0
   peerDependencies:
-    react: 19.0.0-rc.1
-  checksum: cb769884a9cfc8707d49849533d6fccd9854bed786c5f58d6525da6772428b8853a881947dca27eaa41d3861283f58142ae39a0bb991a0ffd00f83a1df533990
+    react: ^19.0.0
+  checksum: 820c4e4003c5615849bf0cda97d8a55b99af2bb59cc0825882b727f0ad0c4bf4581bb3d25e00beca1164203dbc172f0a8c4725e7aa2fb85e025938722384a84e
   languageName: node
   linkType: hard
 
@@ -17209,7 +17209,7 @@ __metadata:
     "@changesets/cli": 2.27.11
     "@commitlint/cli": 19.6.1
     "@commitlint/config-conventional": 19.6.0
-    "@react-three/fiber": 9.0.0-rc.1
+    "@react-three/fiber": 9.0.0-rc.2
     "@remix-run/dev": 2.15.2
     "@simonsmith/cypress-image-snapshot": 9.1.0
     "@swc/core": 1.10.4
@@ -18126,10 +18126,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"scheduler@npm:0.25.0-rc.1":
-  version: 0.25.0-rc.1
-  resolution: "scheduler@npm:0.25.0-rc.1"
-  checksum: 03b56e352ab835ee4d2e55525380f622807e6d2407291474e21bdb70e8135da0e0d7bec3e86c7b0d68d83ffa6645799e947ce34e1bc91c982f4d6e5285cfedcd
+"scheduler@npm:0.25.0, scheduler@npm:^0.25.0":
+  version: 0.25.0
+  resolution: "scheduler@npm:0.25.0"
+  checksum: b7bb9fddbf743e521e9aaa5198a03ae823f5e104ebee0cb9ec625392bb7da0baa1c28ab29cee4b1e407a94e76acc6eee91eeb749614f91f853efda2613531566
   languageName: node
   linkType: hard
 
@@ -18148,13 +18148,6 @@ __metadata:
   dependencies:
     loose-envify: ^1.1.0
   checksum: 3e82d1f419e240ef6219d794ff29c7ee415fbdc19e038f680a10c067108e06284f1847450a210b29bbaf97b9d8a97ced5f624c31c681248ac84c80d56ad5a2c4
-  languageName: node
-  linkType: hard
-
-"scheduler@npm:^0.25.0":
-  version: 0.25.0
-  resolution: "scheduler@npm:0.25.0"
-  checksum: b7bb9fddbf743e521e9aaa5198a03ae823f5e104ebee0cb9ec625392bb7da0baa1c28ab29cee4b1e407a94e76acc6eee91eeb749614f91f853efda2613531566
   languageName: node
   linkType: hard
 
